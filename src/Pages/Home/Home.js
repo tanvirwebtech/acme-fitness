@@ -6,6 +6,7 @@ const Home = () => {
         <div>
             Home
             <Login></Login>
+            <button onClick={() => console.log("click")}> add</button>
         </div>
     );
 };
