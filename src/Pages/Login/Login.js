@@ -1,13 +1,26 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Login.css";
 import google from "../../images/google.png";
+
 const Login = () => {
     const { signInUsingGoogle, signInWithEmail, setUserEmail, setUserPass } =
         useAuth();
+    const location = useLocation();
+    console.log(location);
 
+    const redirectUrl = location.state?.from || "/";
+
+    const history = useHistory();
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle().then((result) => {
+            // setUser(result.user);
+            history.push(redirectUrl);
+        });
+    };
     const handleEmailInput = (e) => {
         setUserEmail(e.target.value);
     };
@@ -21,6 +34,15 @@ const Login = () => {
     };
     return (
         <div className="text-light">
+            {location.state ? (
+                <div className="redirected">
+                    <p className="text-warning px-3 py-2 ">
+                        You must Login First
+                    </p>
+                </div>
+            ) : (
+                ""
+            )}
             <h4>Please Login Here</h4>
             <Form onSubmit={login} className="login-form w-50 mx-auto p-4">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,14 +72,16 @@ const Login = () => {
                 <p className="pt-5 pb-4 text-center">
                     New at Acme Fitness?{" "}
                     <Link to="/login">
-                        <span className="site-aqua">Sign Up Here</span>
+                        <span className="site-aqua text-decoration-none">
+                            Sign Up Here
+                        </span>
                     </Link>
                 </p>
                 <hr />
                 <p> or </p>
 
                 <button
-                    onClick={signInUsingGoogle}
+                    onClick={handleGoogleSignIn}
                     className="px-3 py-2 sign-in-google"
                 >
                     {" "}

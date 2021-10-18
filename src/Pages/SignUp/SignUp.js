@@ -4,14 +4,8 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const SignUp = () => {
-    const {
-        user,
-        setName,
-        setUserEmail,
-        userPass,
-        setUserPass,
-        signUpWithEmail,
-    } = useAuth();
+    const { setName, setUserEmail, userPass, setUserPass, signUpWithEmail } =
+        useAuth();
     const [err, setErr] = useState("");
     const [signUpStatus, setSignUpStatus] = useState(false);
     const [isPassMatched, setIsPassMatched] = useState(false);
@@ -73,6 +67,7 @@ const SignUp = () => {
                             placeholder="Enter Name"
                             className="w-50 mx-auto"
                             onBlur={handleName}
+                            required
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -82,6 +77,7 @@ const SignUp = () => {
                             placeholder="Enter email"
                             className="w-50 mx-auto"
                             onBlur={handleEmailInput}
+                            required
                         />
                     </Form.Group>
 
@@ -92,6 +88,7 @@ const SignUp = () => {
                             placeholder="Password"
                             onBlur={handlePassInput}
                             className="w-50 mx-auto"
+                            required
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword2">
@@ -101,6 +98,7 @@ const SignUp = () => {
                             placeholder="Confirm Password"
                             onBlur={handleConfirmPassInput}
                             className="w-50 mx-auto"
+                            required
                         />
                     </Form.Group>
                     <p className="text-danger text-center mb-4">{err}</p>
@@ -110,7 +108,9 @@ const SignUp = () => {
                     <p className="pt-5 pb-4 text-center">
                         Already signed up?{" "}
                         <Link to="/login">
-                            <span className="site-aqua">Login Here</span>
+                            <span className="site-aqua text-decoration-none">
+                                Login Here
+                            </span>
                         </Link>
                     </p>
                 </Form>

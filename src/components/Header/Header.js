@@ -26,11 +26,12 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/about">
                                 About
                             </Nav.Link>
-                            <Nav.Link as={NavLink} to="/services">
+                            <Nav.Link
+                                as={NavLink}
+                                to="/services"
+                                className="me-5"
+                            >
                                 Services
-                            </Nav.Link>
-                            <Nav.Link as={NavLink} to="/single-service">
-                                Service Details
                             </Nav.Link>
                             {user.email ? (
                                 <button onClick={() => logOut()}>

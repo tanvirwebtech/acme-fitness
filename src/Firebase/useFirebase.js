@@ -43,14 +43,7 @@ const useFirebase = () => {
     };
 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user);
-                console.log(result.user);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
+        return signInWithPopup(auth, googleProvider);
     };
 
     const logOut = () => {
