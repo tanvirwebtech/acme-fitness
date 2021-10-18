@@ -1,0 +1,80 @@
+.top-banner {
+    background-image: url("https://i.ibb.co/C9LC6WY/man-push-up.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+/* .top-banner.A102 {
+    background-image: url("https://i.ibb.co/61W1mjK/outdoor-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.top-banner.A103 {
+    background-image: url("https://i.ibb.co/jGXyJ94/personal-workout-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.top-banner.A104 {
+    background-image: url("https://i.ibb.co/GnnWjq7/hit-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.top-banner.A105 {
+    background-image: url("https://i.ibb.co/GdRX0dx/crossfit-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.top-banner.A106 {
+    background-image: url("https://i.ibb.co/CvLzrTd/cycling-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.top-banner.A107 {
+    background-image: url("https://i.ibb.co/61W1mjK/outdoor-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+} */
+.work-out-heading {
+    height: 600px;
+    position: relative;
+    z-index: 989898;
+}
+.work-out-heading h2 {
+    font-size: 3.4rem;
+}
+.course-desc {
+    position: relative;
+}
+.course-desc::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 5px;
+    background-color: #01d5ae;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.course-overview {
+    border: 1px solid #01d5ae;
+}
+.top-banner::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(32, 34, 42);
+    background: linear-gradient(
+        360deg,
+        rgba(32, 34, 42, 1) 0%,
+        rgba(255, 0, 0, 0) 100%
+    );
+}

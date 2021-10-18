@@ -1,0 +1,9 @@
+#responsive-navbar-nav .navbar-nav .nav-link {
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+#responsive-navbar-nav .navbar-nav .nav-link:hover {
+    color: #01d5ae;
+}

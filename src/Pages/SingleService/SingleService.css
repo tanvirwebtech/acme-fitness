@@ -1,0 +1,8 @@
+.card-bg {
+    background-color: #ffffff22;
+    /* opacity: 0.3;s */
+    transition: all 0.3s;
+}
+.card-bg:hover{
+    border: 1px solid #01d5ae;
+}

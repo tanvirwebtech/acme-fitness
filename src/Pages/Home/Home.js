@@ -1,12 +1,69 @@
 import React from "react";
-import Login from "../Login/Login";
-
+import { Col, Container, Row } from "react-bootstrap";
+import "./Home.css";
+import heroImg from "../../images/hero-thunb.png";
+import SiteButton from "../../components/Buttons/SiteButton";
+import useServiceContext from "../../hooks/useServiceContext";
+import SingleService from "../SingleService/SingleService";
 const Home = () => {
+    const { services } = useServiceContext();
+    services.length = 6;
     return (
-        <div>
-            Home
-            <Login></Login>
-            <button onClick={() => console.log("click")}> add</button>
+        <div className="text-white">
+            <div className="hero-banner">
+                <div className="hero-content py-5">
+                    <Container>
+                        <Row>
+                            <Col md={7} className="d-flex align-items-center">
+                                <div className="welcome-details">
+                                    <h1 className="welcome-heading">
+                                        WelCome To{" "}
+                                        <span className="site-aqua">
+                                            Acme Fitness
+                                        </span>{" "}
+                                    </h1>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Iste ipsa, molestias
+                                        est iusto quibusdam tempora dolore
+                                        libero voluptates eius earum error
+                                        exercitationem velit, soluta totam
+                                        nulla? Possimus maiores sit laborum.
+                                    </p>
+                                    <SiteButton>Learn More</SiteButton>
+                                </div>
+                            </Col>
+                            <Col md={5}>
+                                <div className="hero-thumb">
+                                    <img
+                                        className="img-fluid"
+                                        src={heroImg}
+                                        alt=""
+                                    />
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </div>
+
+            <section className="py-5">
+                <h2 className="py-5">
+                    Our <span className="site-aqua">WorkOut</span> Courses
+                </h2>
+                <div className="services">
+                    <Container>
+                        <Row xs={1} md={3} sm={2} className="g-4">
+                            {services.map((service) => (
+                                <SingleService
+                                    key={service?.id}
+                                    service={service}
+                                />
+                            ))}
+                        </Row>
+                    </Container>
+                </div>
+            </section>
         </div>
     );
 };
