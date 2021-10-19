@@ -26,6 +26,7 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    // Sign up With Email and Password
     const signUpWithEmail = () => {
         createUserWithEmailAndPassword(auth, userEmail, userPass).then(
             (result) => {
@@ -37,6 +38,7 @@ const useFirebase = () => {
         );
     };
 
+    // Sign in with Email and Password
     const signInWithEmail = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, userEmail, userPass)
@@ -49,11 +51,13 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
+    // Google Sign in
     const signInUsingGoogle = () => {
         setIsLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
 
+    // Log out
     const logOut = () => {
         setIsLoading(true);
         signOut(auth)
@@ -61,6 +65,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
+    // Observer Function
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {

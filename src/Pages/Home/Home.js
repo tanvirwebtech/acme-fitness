@@ -53,6 +53,7 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* Service Section */}
             <section className="py-5">
                 <h2 className="py-5">
                     Our <span className="site-aqua">WorkOut</span> Courses
@@ -70,6 +71,7 @@ const Home = () => {
                     </Container>
                 </div>
             </section>
+            {/* BMI Calculator */}
             <section>
                 <BMICalculator></BMICalculator>
             </section>

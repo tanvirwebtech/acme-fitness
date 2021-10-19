@@ -16,6 +16,7 @@ const MemberShip = () => {
                 <p className="pb-4">We Have amazing package plan for you!</p>
                 <Container>
                     <Row xs={1} md={3} sm={2} className="g-4">
+                        {/* Looping all membership package */}
                         {memberShipPkg.map((pkg) => (
                             <SingleMemberShipPkg key={pkg?.pkg_id} pkg={pkg} />
                         ))}

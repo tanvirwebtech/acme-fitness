@@ -25,6 +25,8 @@ const SingleMemberShipPkg = (props) => {
                         <h4 className="py-2">
                             ${pkg_price}/{pkg_id === 202 ? "Day" : "Month"}
                         </h4>
+
+                        {/* Link to Enroll Confirm Page */}
                         <Link to="/enroll-confirm">
                             <SiteButton>Continue</SiteButton>
                         </Link>

@@ -16,6 +16,7 @@ const About = () => {
                     </Container>
                 </div>
             </div>
+            {/* About Details */}
             <section className="py-5 text-light">
                 <Container>
                     <Row className="g-4">
