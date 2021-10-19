@@ -5,9 +5,10 @@ import heroImg from "../../images/hero-thunb.png";
 import SiteButton from "../../components/Buttons/SiteButton";
 import useServiceContext from "../../hooks/useServiceContext";
 import SingleService from "../SingleService/SingleService";
+import BMICalculator from "../../components/BMICalculator/BMICalculator";
+import { Link } from "react-router-dom";
 const Home = () => {
     const { services } = useServiceContext();
-    services.length = 6;
     return (
         <div className="text-white">
             <div className="hero-banner">
@@ -30,7 +31,12 @@ const Home = () => {
                                         exercitationem velit, soluta totam
                                         nulla? Possimus maiores sit laborum.
                                     </p>
-                                    <SiteButton>Learn More</SiteButton>
+                                    <Link to="/about">
+                                        <SiteButton>
+                                            Learn More{"  "}
+                                            <i className="fas fa-arrow-right"></i>
+                                        </SiteButton>
+                                    </Link>
                                 </div>
                             </Col>
                             <Col md={5}>
@@ -63,6 +69,9 @@ const Home = () => {
                         </Row>
                     </Container>
                 </div>
+            </section>
+            <section>
+                <BMICalculator></BMICalculator>
             </section>
         </div>
     );

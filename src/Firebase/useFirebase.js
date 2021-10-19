@@ -19,6 +19,8 @@ const useFirebase = () => {
     const [userEmail, setUserEmail] = useState("");
     const [userPass, setUserPass] = useState("");
     const [name, setName] = useState("");
+    const [err, setErr] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -36,18 +38,27 @@ const useFirebase = () => {
     };
 
     const signInWithEmail = () => {
-        signInWithEmailAndPassword(auth, userEmail, userPass).then((result) => {
-            setUser(result.user);
-            console.log(result.user);
-        });
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, userEmail, userPass)
+            .then((result) => {
+                setUser(result.user);
+            })
+            .catch((err) => {
+                setErr(err.message);
+            })
+            .finally(() => setIsLoading(false));
     };
 
     const signInUsingGoogle = () => {
+        setIsLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
 
     const logOut = () => {
-        signOut(auth).then(() => {});
+        setIsLoading(true);
+        signOut(auth)
+            .then(() => {})
+            .finally(() => setIsLoading(false));
     };
 
     useEffect(() => {
@@ -57,6 +68,7 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
+            setIsLoading(false);
         });
     }, []);
 
@@ -71,6 +83,9 @@ const useFirebase = () => {
         userPass,
         setName,
         signUpWithEmail,
+        err,
+        isLoading,
+        setIsLoading,
     };
 };
 

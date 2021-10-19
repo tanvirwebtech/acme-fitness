@@ -23,8 +23,14 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto text-light">
+                            <Nav.Link as={NavLink} to="/">
+                                Home
+                            </Nav.Link>
                             <Nav.Link as={NavLink} to="/about">
                                 About
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to="/get_membership">
+                                MemberShip
                             </Nav.Link>
                             <Nav.Link
                                 as={NavLink}
@@ -34,16 +40,19 @@ const Header = () => {
                                 Services
                             </Nav.Link>
                             {user.email ? (
-                                <button onClick={() => logOut()}>
+                                <button
+                                    className="header-logout-btn px-2 mx-2"
+                                    onClick={() => logOut()}
+                                >
                                     Log out
                                 </button>
                             ) : (
                                 <>
                                     <Nav.Link as={NavLink} to="/login">
-                                        Login
+                                        Login <i class="fas fa-user"></i>
                                     </Nav.Link>
                                     <Nav.Link as={NavLink} to="/signup">
-                                        SignUp
+                                        SignUp <i class="fas fa-user-plus"></i>
                                     </Nav.Link>
                                 </>
                             )}

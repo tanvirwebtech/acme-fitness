@@ -1,0 +1,20 @@
+[
+    {
+        "pkg_id": 202,
+        "pkg_name": "Per Day Fit",
+        "pkg_price": 10,
+        "pkg_desc": "take your personal fitness one day at a time, we’d like to invite you to experience all that Acme Fitness has to offer. You are always Welcome!"
+    },
+    {
+        "pkg_id": 203,
+        "pkg_name": "Mothly Fitness",
+        "pkg_price": 100,
+        "pkg_desc": "Our monthly membership helps you to keep your fitness goals on track without a commitment of any kind, while still enjoying all of the amenities that Acme Fitness has to offer."
+    },
+    {
+        "pkg_id": 204,
+        "pkg_name": "Yearly Fitness",
+        "pkg_price": 70,
+        "pkg_desc": "With a 1-year commitment, we offer a monthly membership for only $70. When you pre-purchase a complete year Individual membership you get 2/mnth Free Extention."
+    }
+]
