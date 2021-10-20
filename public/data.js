@@ -19,13 +19,44 @@ https://i.ibb.co/C9LC6WY/man-push-up.jpg
 
 
 
+
+
+
 */
+
+const trainers = [
+    {
+        id: 303,
+        name: "Fready Lin",
+        img: "https://i.ibb.co/L8YwgMp/coach1.jpg",
+        rating: 4,
+    },
+    {
+        id: 304,
+        name: "Alicia",
+        img: "https://i.ibb.co/qdf9Y7x/coach3.jpg",
+        rating: 4.5,
+    },
+    {
+        id: 305,
+        name: "Jhon Broad",
+        img: "https://i.ibb.co/n8f1ZYT/coach2.jpg",
+        rating: 5,
+    },
+    {
+        id: 306,
+        name: "Alex Susan",
+        img: "https://i.ibb.co/VvqMVZw/coach4.jpg",
+        rating: 4.4,
+    },
+];
 
 const data = [
     {
         id: 101,
         service_title: "Group Workout",
         length: "6 month",
+        trainerId: "303",
         price: 120,
         service_desc:
             "Our Group  Workshop takes circuit training to a whole new level; scrapping the concept of the standard circuit stations and immersing you with your",

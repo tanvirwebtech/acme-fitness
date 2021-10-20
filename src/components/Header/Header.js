@@ -49,10 +49,11 @@ const Header = () => {
                             ) : (
                                 <>
                                     <Nav.Link as={NavLink} to="/login">
-                                        Login <i class="fas fa-user"></i>
+                                        Login <i className="fas fa-user"></i>
                                     </Nav.Link>
                                     <Nav.Link as={NavLink} to="/signup">
-                                        SignUp <i class="fas fa-user-plus"></i>
+                                        SignUp{" "}
+                                        <i className="fas fa-user-plus"></i>
                                     </Nav.Link>
                                 </>
                             )}

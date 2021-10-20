@@ -36,7 +36,8 @@ const SingleService = (props) => {
                         <h4 className="py-2">${price}/Month</h4>
                         <Link to={`/service-details/${id}`}>
                             <SiteButton>
-                                View Details <i class="fas fa-info-circle"></i>
+                                View Details{" "}
+                                <i className="fas fa-info-circle"></i>
                             </SiteButton>
                         </Link>
                     </Card.Footer>

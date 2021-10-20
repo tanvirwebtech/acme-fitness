@@ -23,10 +23,12 @@ const Footer = () => {
         <>
             <footer className="py-4 text-light">
                 <Container>
-                    <Row>
+                    <Row xs={1} md={3} sm={2} className="g-4">
                         <Col>
                             <div className="footer-logo">
-                                <img src={logo} alt="" />
+                                <Link to="/">
+                                    <img src={logo} alt="" />
+                                </Link>
                             </div>
                             <div className="social">
                                 <h2 className="text-center pb-4">
@@ -79,7 +81,7 @@ const Footer = () => {
                             <div className="address">
                                 <h2>
                                     {" "}
-                                    <i class="fas fa-map-marker-alt"></i>{" "}
+                                    <i className="fas fa-map-marker-alt"></i>{" "}
                                     Address
                                 </h2>
                                 <h4>53/A Sate View road, California</h4>

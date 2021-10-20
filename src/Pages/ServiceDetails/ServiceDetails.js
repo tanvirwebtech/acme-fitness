@@ -33,25 +33,31 @@ const ServiceDetails = () => {
                 <Container>
                     <Row className="mt-5">
                         <Col md={7} sm={6} className="text-light p-3">
-                            <h2 className="course-desc py-3">
-                                Course Description:
-                            </h2>
-                            <p className="fs-5">{service_desc}</p>
+                            <div className="d-flex align-items-center">
+                                <div className="course-desc-wrapper">
+                                    <h2 className="course-desc py-3">
+                                        Course Description:
+                                    </h2>
+                                    <p className="fs-5">{service_desc}</p>
+                                </div>
+                            </div>
                         </Col>
                         <Col md={5} sm={6}>
-                            <div className="course-overview p-3 text-light ">
-                                <h4>
-                                    Course Trainer: <span>{trainer}</span>
-                                </h4>
-                                <h4>
-                                    Duration: <span>{length}</span>
-                                </h4>
-                                <h4>
-                                    Price: <span>${price} / month</span>
-                                </h4>
-                                <Link to="/enroll-confirm">
-                                    <SiteButton>Join Now</SiteButton>
-                                </Link>
+                            <div className="d-flex align-items-center h-100">
+                                <div className="course-overview p-3 text-light ">
+                                    <h4>
+                                        Course Trainer: <span>{trainer}</span>
+                                    </h4>
+                                    <h4>
+                                        Duration: <span>{length}</span>
+                                    </h4>
+                                    <h4>
+                                        Price: <span>${price} / month</span>
+                                    </h4>
+                                    <Link to="/enroll-confirm">
+                                        <SiteButton>Join Now</SiteButton>
+                                    </Link>
+                                </div>
                             </div>
                         </Col>
                     </Row>

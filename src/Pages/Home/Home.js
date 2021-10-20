@@ -7,8 +7,10 @@ import useServiceContext from "../../hooks/useServiceContext";
 import SingleService from "../SingleService/SingleService";
 import BMICalculator from "../../components/BMICalculator/BMICalculator";
 import { Link } from "react-router-dom";
+import Trainers from "../../components/Trainers/Trainers";
 const Home = () => {
     const { services } = useServiceContext();
+    const slicedServices = services.slice(0, 6);
     return (
         <div className="text-white">
             <div className="hero-banner">
@@ -61,7 +63,7 @@ const Home = () => {
                 <div className="services">
                     <Container>
                         <Row xs={1} md={3} sm={2} className="g-4">
-                            {services.map((service) => (
+                            {slicedServices.map((service) => (
                                 <SingleService
                                     key={service?.id}
                                     service={service}
@@ -74,6 +76,10 @@ const Home = () => {
             {/* BMI Calculator */}
             <section>
                 <BMICalculator></BMICalculator>
+            </section>
+
+            <section>
+                <Trainers></Trainers>
             </section>
         </div>
     );
