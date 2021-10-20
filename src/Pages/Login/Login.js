@@ -11,17 +11,21 @@ const Login = () => {
         signInWithEmail,
         setUserEmail,
         setUserPass,
+        setUser,
+        setErr,
+        setIsLoading,
         err,
     } = useAuth();
     const location = useLocation();
 
+    // Getting URL to redirect
     const redirectUrl = location.state?.from || "/";
     console.log(redirectUrl);
     const history = useHistory();
 
+    // Google Sign in
     const handleGoogleSignIn = () => {
         signInUsingGoogle().then((result) => {
-            // setUser(result.user);
             history.push(redirectUrl);
         });
     };
@@ -32,9 +36,19 @@ const Login = () => {
         setUserPass(e.target.value);
     };
 
+    // Handle Email Login
     const login = (e) => {
         e.preventDefault();
-        signInWithEmail();
+        signInWithEmail()
+            .then((result) => {
+                setUser(result.user);
+
+                history.push(redirectUrl);
+            })
+            .catch((err) => {
+                setErr(err.message);
+            })
+            .finally(() => setIsLoading(false));
     };
     return (
         <div className="text-light">

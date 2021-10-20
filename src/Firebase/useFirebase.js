@@ -41,14 +41,14 @@ const useFirebase = () => {
     // Sign in with Email and Password
     const signInWithEmail = () => {
         setIsLoading(true);
-        signInWithEmailAndPassword(auth, userEmail, userPass)
-            .then((result) => {
-                setUser(result.user);
-            })
-            .catch((err) => {
-                setErr(err.message);
-            })
-            .finally(() => setIsLoading(false));
+        return signInWithEmailAndPassword(auth, userEmail, userPass);
+        // .then((result) => {
+        //     setUser(result.user);
+        // })
+        // .catch((err) => {
+        //     setErr(err.message);
+        // })
+        // .finally(() => setIsLoading(false));
     };
 
     // Google Sign in
@@ -87,8 +87,10 @@ const useFirebase = () => {
         userEmail,
         userPass,
         setName,
+        setErr,
         signUpWithEmail,
         err,
+        setUser,
         isLoading,
         setIsLoading,
     };

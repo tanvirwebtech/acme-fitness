@@ -6,15 +6,28 @@ const BMICalculator = () => {
     const [height, setHeight] = useState(0);
     const [bmi, setBmi] = useState(0);
     const [bmiMsg, setbBmiMsg] = useState("");
-
+    const [bmiWightErr, setBmiWeightErr] = useState("");
+    const [bmiHeightErr, setBmiHeightErr] = useState("");
+    const [bmiErr, setBmiErr] = useState("");
     const handleWeight = (e) => {
-        setWeight(e.target.value);
+        const weightValue = parseInt(e.target.value);
+        if (weightValue < 0) {
+            setBmiWeightErr("Weight must be greater than 0");
+        } else {
+            setBmiWeightErr("");
+            setWeight(e.target.value);
+        }
     };
     const handleHeight = (e) => {
-        const heightInCM = e.target.value;
-        setHeight(heightInCM / 100);
+        const heightValue = parseInt(e.target.value);
+        if (heightValue < 0) {
+            setBmiHeightErr("Height must be greater than 0");
+        } else {
+            setBmiHeightErr("");
+            setHeight(heightValue / 100);
+        }
     };
-    console.log(bmi);
+
     useEffect(() => {
         if (bmi === 0) {
             setbBmiMsg("");
@@ -46,6 +59,8 @@ const BMICalculator = () => {
             );
         }
     }, [bmi]);
+
+    // Calculate BMI
     const calcBMI = (e) => {
         e.preventDefault();
         const calcBmi = weight / (height * height);
@@ -76,6 +91,13 @@ const BMICalculator = () => {
                                         onKeyUp={handleWeight}
                                         required
                                     />
+                                    {bmiWightErr ? (
+                                        <p className="text-danger">
+                                            {bmiWightErr}
+                                        </p>
+                                    ) : (
+                                        ""
+                                    )}
                                 </Form.Group>
 
                                 <Form.Group
@@ -92,6 +114,13 @@ const BMICalculator = () => {
                                         onKeyUp={handleHeight}
                                         required
                                     />
+                                    {bmiHeightErr ? (
+                                        <p className="text-danger">
+                                            {bmiHeightErr}
+                                        </p>
+                                    ) : (
+                                        ""
+                                    )}
                                 </Form.Group>
 
                                 <Button

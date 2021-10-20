@@ -9,7 +9,25 @@ We provide different workout course for staying fit.
 
 ### About Site
 
-This site has a **Home Page** a **About page**
+This site has a **Home Page** , **About page** , **MemberShip Page** , **Log in** and **Sign up page**
+
+`Home Page`
+
+-   You will see a Hero Bannner.
+-   Next Section you will see 6 services total services on Service page.
+-   You can see our qualified trainers on Trainer section
+
+`About Page`
+
+-   We share our commitment
+
+`MemberShip Page`
+
+-   You will get three package to Take Membership
+
+*   Daily Package: You have to pay for daily workout on our gym.
+*   Monthly Package: You have to pay for full month
+*   Yearly Package: This package is very efficiant for you. Comparing other two packages this package can save a good amount of your money in order to your long term plan.
 
 ### `Key Features`
 
@@ -19,3 +37,8 @@ This site has a **Home Page** a **About page**
 -   Site is fully responsive
 -   You'll get three different membership package
 -   Social Media Icons are on Footer Section
+-   You can see your course Trainer on Service Details Page
+
+### Thanks for Visiting Us
+
+## Have A NICE DAY!!

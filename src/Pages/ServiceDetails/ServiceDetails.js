@@ -4,19 +4,39 @@ import SiteButton from "../../components/Buttons/SiteButton";
 import { Link, useParams } from "react-router-dom";
 import "./ServiceDetails.css";
 import useServiceContext from "../../hooks/useServiceContext";
+import Trainer from "../../components/Trainer/Trainer";
 
 const ServiceDetails = () => {
     let { service_id } = useParams();
     const [service, setService] = useState({});
     const { services } = useServiceContext();
+    const [trainers, setTrainers] = useState([]);
+    const [courseTrainer, setCourseTrainer] = useState({});
 
     // Getting Single service info using id parameter
     useEffect(() => {
         setService(services?.find((e) => e.id === service_id));
+    }, [services]);
+
+    const {
+        service_title,
+        length,
+        price,
+        service_desc,
+        trainer,
+        banner,
+        trainerId,
+    } = service || {};
+    useEffect(() => {
+        fetch("/trainers.json")
+            .then((res) => res.json())
+            .then((data) => setTrainers(data));
     }, []);
 
-    const { service_title, length, price, service_desc, trainer, banner } =
-        service || {};
+    useEffect(() => {
+        setCourseTrainer(trainers?.find((e) => e.id === trainerId));
+    }, [trainers]);
+
     return (
         <>
             <div
@@ -43,7 +63,7 @@ const ServiceDetails = () => {
                             </div>
                         </Col>
                         <Col md={5} sm={6}>
-                            <div className="d-flex align-items-center h-100">
+                            <div className="d-flex align-items-center h-100 justify-content-center">
                                 <div className="course-overview p-3 text-light ">
                                     <h4>
                                         Course Trainer: <span>{trainer}</span>
@@ -62,6 +82,25 @@ const ServiceDetails = () => {
                         </Col>
                     </Row>
                 </Container>
+
+                {/* Course Trainer  */}
+                <section>
+                    <Container>
+                        <h2 className="pt-5 pb-4">Course Trainer</h2>
+                        <Row md={3} sm={1} xs={1}>
+                            <Col></Col>
+                            <Col>
+                                {courseTrainer ? (
+                                    <Trainer trainer={courseTrainer} />
+                                ) : (
+                                    ""
+                                )}{" "}
+                            </Col>
+
+                            <Col></Col>
+                        </Row>
+                    </Container>
+                </section>
             </div>
         </>
     );

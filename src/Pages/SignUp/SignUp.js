@@ -9,9 +9,13 @@ const SignUp = () => {
     const [err, setErr] = useState("");
     const [signUpStatus, setSignUpStatus] = useState(false);
     const [isPassMatched, setIsPassMatched] = useState(false);
+
+    // Email Input
     const handleEmailInput = (e) => {
         setUserEmail(e.target.value);
     };
+
+    // Password Input
     const handlePassInput = (e) => {
         const pass = e.target.value;
         if (pass.length < 6) {
@@ -20,6 +24,8 @@ const SignUp = () => {
             setUserPass(e.target.value);
         }
     };
+
+    // Check Password Match
     const handleConfirmPassInput = (e) => {
         const pass = e.target.value;
         if (pass.length < 6) {
@@ -36,6 +42,8 @@ const SignUp = () => {
     const handleName = (e) => {
         setName(e.target.value);
     };
+
+    // Handle Sign Up
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isPassMatched) {

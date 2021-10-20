@@ -24,6 +24,7 @@ const Footer = () => {
             <footer className="py-4 text-light">
                 <Container>
                     <Row xs={1} md={3} sm={2} className="g-4">
+                        {/* Site Logo and Social Icons  */}
                         <Col>
                             <div className="footer-logo">
                                 <Link to="/">
@@ -60,6 +61,8 @@ const Footer = () => {
                                 </a>
                             </div>
                         </Col>
+
+                        {/* Important Links  */}
                         <Col className="d-flex justify-content-center align-items-center">
                             <div className="important-linka">
                                 <h2>Important Links</h2>
@@ -77,6 +80,8 @@ const Footer = () => {
                                 </Link>
                             </div>
                         </Col>
+
+                        {/* Address Column */}
                         <Col className="d-flex justify-content-center align-items-center">
                             <div className="address">
                                 <h2>
@@ -84,8 +89,16 @@ const Footer = () => {
                                     <i className="fas fa-map-marker-alt"></i>{" "}
                                     Address
                                 </h2>
-                                <h4>53/A Sate View road, California</h4>
-                                <h4>USA</h4>
+                                <h4>53/A Sate View road, California, USA</h4>
+
+                                <h5>
+                                    <i className="fas fa-phone-alt"></i> +1 541
+                                    6546
+                                </h5>
+                                <h5>
+                                    <i className="fas fa-envelope"></i>{" "}
+                                    contact@acmefitness.com
+                                </h5>
                             </div>
                         </Col>
                     </Row>

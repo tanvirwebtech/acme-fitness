@@ -57,7 +57,7 @@ const Header = () => {
                                     </Nav.Link>
                                 </>
                             )}
-                            <div className="user-icon">
+                            <div className="user-icon d-flex align-items-center">
                                 <div className="h5">{user.displayName}</div>
                             </div>
                         </Nav>

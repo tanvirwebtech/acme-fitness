@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
+import Rating from "react-rating";
 
 const Trainer = (props) => {
     const { name, img, desc, rating } = props.trainer;
@@ -21,7 +22,14 @@ const Trainer = (props) => {
                         <Card.Text>{desc}</Card.Text>
                     </Card.Body>
                     <Card.Footer className="pb-4">
-                        <p>Rating {rating}</p>
+                        <p>
+                            <Rating
+                                emptySymbol="far fa-star "
+                                fullSymbol="fas fa-star site-aqua"
+                                initialRating={rating}
+                                readonly
+                            ></Rating>{" "}
+                        </p>
                     </Card.Footer>
                 </Card>
             </Col>
